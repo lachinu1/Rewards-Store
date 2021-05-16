@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+  div.container {
+    position: absolute;
+    width: 1440px;
+    height: 560px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+  }
+
+  div.box {
+    position: relative;
+    width: 1440px;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+  }
+
+  .logo {
+    position: absolute;
+    width: 38.77px;
+    height: 36px;
+    left: 42px;
+    top: 22px;
+  }
+
+  h3.user {
+    position: absolute;
+    width: 15%;
+    height: 48px;
+    left: 1183px;
+    right: 60.47%;
+    top: calc(50% - 48px/2);
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 48px;
+    letter-spacing: -0.15px;
+    color: #616161;
+  }
+
+  span.puntos {
+    position: absolute;
+    width: 103px;
+    height: 48px;
+    left: 1295px;
+    right: 0%;
+    top: 16px;
+    bottom: 0%;
+
+    background: #EDEDED;
+    border-radius: 20.5px;
+  }
+
+  h3.puntos {
+    position: absolute;
+    height: 48px;
+    left: 12.62%;
+    right: 40.78%;
+    top: calc(50% - 48px/2);
+    
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 48px;
+    letter-spacing: -0.15px;
+    color: #616161;
+  }
+
+  img.coin {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 65.05%;
+    right: 11.65%;
+    top: 25%;
+    bottom: 25%;
+  }
+
+  .header {
+    position: relative;
+    width: 1440px;
+    height: 480px;
+    left: -0.07%;
+    right: 0.07%;
+    top: -0.24%;
+    bottom: -16.26%;
+  }
+
+  h1 {
+    position: absolute;
+    height: 80px;
+    left: 9.17%;
+    right: 69.03%;
+    top: calc(50% - 80px/2 + 118px);
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 80px;
+    color: #FFFFFF;
+  }
+
+  div.img {
+    width: 1440px;
+    height: 400px;
+    background-size: 100% 100%;
+  background-repeat:no-repeat;
+    background: url(/src/Images/header-x1.png);
+    background-size: cover;
+  }
+
+  img.img1 {
+    width: 100%;
+    
+  } 
+
