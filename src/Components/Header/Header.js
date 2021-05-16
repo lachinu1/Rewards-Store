@@ -2,7 +2,7 @@ import React from 'react';
 import "./styles.css";
 
 import logo from '../../Images/aerolab-logo.svg';
-import header from '../../Images/header-x1.png';
+// import header from '../../Images/header-x1.png';
 import coin from '../../Images/coin.svg';
     
 function Header() {
