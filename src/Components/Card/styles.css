@@ -1,0 +1,125 @@
+/* Estilos del componente Card */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+.container-card {
+    position: relative;
+    width: 276px;
+    height: 276px;
+
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container-img {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 252px;
+    height: 182px;
+    top: 12px;
+    left: 12px;
+    background: #FFFFFF;
+}
+
+span.buy-blue {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    left: 222px;
+    top: 12px;
+}
+
+span.buy-white {
+     position: relative;
+     width: 42px;
+     height: 42px;
+     left: 222px;
+     top: 12px;
+}
+
+span.points {
+    position: absolute;
+    width: 142px;
+    height: 42px;
+    left: 122px;
+    top: 12px;
+
+    background: #616161;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    border-radius: 100px;
+}
+
+h3#points {
+    position: absolute;
+    height: 18px;
+    left: 10.56%;
+    right: 28.87%;
+    top: calc(50% - 18px/2 - 1px);
+
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    letter-spacing: -0.0329412px;
+    color: #FFFFFF;
+}
+
+img.coins {
+    position: absolute;
+    left: 75.35%;
+    right: 10.56%;
+    top: 6px;
+    bottom: 26.19%;
+}
+
+hr {
+    position: absolute;
+    width: 228px;
+    height: 1px;
+    left: 24px;
+    top: 194px;
+
+    background: #D9D9D9;
+}
+
+
+h5 {
+   
+    height: 20px;
+    left: 24px;
+    top: 214px;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.0376471px;
+    color: #A3A3A3;
+}
+
+h6 {
+    height: 23px;
+    left: 24px;
+    top: 235px;
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    /* identical to box height */
+    letter-spacing: -0.0423529px;
+    color: #616161;
+
+}

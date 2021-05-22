@@ -1,0 +1,61 @@
+/* Estilos del componente Banner */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+  div.container-banner {
+    /* position: absolute; */
+    width: 100%;
+    height: 560px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+  }
+
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    left: -0.07%;
+    right: 0.07%;
+    top: -0.24%;
+    bottom: -16.26%;
+  }
+
+  h1 {
+    position: absolute;
+    height: 80px;
+    left: 9.17%;
+    right: 69.03%;
+    top: calc(50% - 80px/2 + 118px);
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 80px;
+    color: #FFFFFF;
+  }
+
+  div.img {
+    width: 100%;
+    height: 400px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background: url(/src/Images/header-x1.png);
+    background-size: cover;
+  }
+
+  img.img1 {
+    width: 100%;
+    
+  } 
+
