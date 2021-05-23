@@ -2,8 +2,9 @@ import React from 'react';
 import "./styles.css";
 
 
+
+
 function Banner() {
-  
     return (
         <div className="container-banner">
             <div className="header">
@@ -13,7 +14,6 @@ function Banner() {
         </div>
     );
 }
-
 
 export default Banner;
 

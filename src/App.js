@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 //Componentes
 import Header from './Components/Header/Header';
 import Banner from './Components/Banner/Banner';
-import Products from './Components/Products/Products';
 import FilterSet from './Components/FilterSet/FilterSet';
+import Products from './Components/Products/Products';
 
 
 
@@ -12,12 +12,23 @@ import FilterSet from './Components/FilterSet/FilterSet';
 function App() {
 
   const [data, setData] = useState([]);
+  //Maneja el estado del usuario
   const [user, setUser] = useState("");
-  const [points, setPoints] = useState(true);
-  const [products, setProducts] = useState(true);
+   //Maneja el estado del puntos
+  const [points, setPoints] = useState(0);
+   //Maneja el estado de los productos
+  const [products, setProducts] = useState([]);
+  //Maneja el estado de los filtros de Categorías
+  const [categorySelected, setCategorySelected] = useState('');
 
 
 
+  //  Función para actualizar el estado de categorySelected
+   function updateCategorySelected (categorySelected) {
+    setCategorySelected(categorySelected)
+   }
+  
+  
 
 
   //Trae los usuarios con el método GET
@@ -32,9 +43,8 @@ function App() {
     })
     const data = await response.json();
       console.log(data);
-      setData(data.data);
-      setUser();
- 
+      setData(data);
+      setUser(true);
     }
 
     obtenerUsers();
@@ -55,7 +65,8 @@ function App() {
     })
     const data = await response.json();
       console.log(data);
-      setData(data.data);
+      setData(data);
+      setProducts(true);
     }
 
     obtenerProducts();
@@ -63,7 +74,7 @@ function App() {
   },[products])
   
   
-  //Envía los puntos con el método POST
+  //Envía los puntos con el método POST  - Tira error 404, consultar... 
   useEffect(() => {
     const obtenerPoints = async ()  => {
       const response = await fetch("https://coding-challenge-api.aerolab.co/user/points", {
@@ -79,8 +90,8 @@ function App() {
     })
     const data = await response.json();
       console.log(data);
-      setData(data.data);
-      setPoints(true);
+      setData(data);
+      setPoints();
     }
 
     obtenerPoints();
@@ -91,12 +102,25 @@ function App() {
   
   return (
     <div>
-      <Header data={data} user={user} />
+      <Header
+        data={data}
+        setData={setData}
+        
+      
+      />
       <Banner />
-      <FilterSet />
-      <Products data={data} products={products} setProducts={setProducts}/>
+      <FilterSet
+        data={data}
+        setData={setData}
+        updateCategorySelected={updateCategorySelected} />
+      <Products
+        data={data}
+        setData={setData}
+        products={products}
+        setProducts={setProducts} />
     </div>
   );
 }
+
 
 export default App;

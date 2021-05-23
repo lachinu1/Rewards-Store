@@ -1,6 +1,9 @@
 import React from 'react';
 import "./styles.css";
 
+//Proveedor
+import { ProductContext } from '../../Context/ProductContext';
+
 
 //Imagenes
 // import blue from '../../Images/buy-blue.svg';
@@ -11,8 +14,13 @@ import img from '../../Images/product-pics/AcerAspire-x1.png';
 
 function Card() {
 
+    const { data, setData } = React.useContext(ProductContext);
+    // const { products, setProducts } = React.useContext(ProductContext);
+
+
     return (
-        <div className="container-card">
+           
+        <div  className="container-card">
             {/* <span className="buy-blue">
                 <img src={blue} alt=""></img>
             </span> */}
@@ -21,16 +29,20 @@ function Card() {
             </span> */}
             <span className="points">
                 <h3 id="points">You need 8000</h3>
-                <img className="coins" src={coin} alt="coin" />
+                <figure>
+                    <img className="coins" src={coin} alt="coin" />
+                </figure>
             </span>
             <div className="container-img">
-                <img src={img} alt="producto" />
+                <figure>
+                    <img src={data.img} alt={data.name} />
+                </figure>
             </div>
             <hr></hr>
-            <h5>Phones</h5>
-            <h6>iPhone8</h6>
+            <h5>{data.category}</h5>
+            <h6>{data.name}</h6>
         </div>
-    );
+    )
 }
 
 
