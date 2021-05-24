@@ -6,7 +6,7 @@ import coin from '../../Images/coin.svg';
     
 
 
-function Header({ data }) {
+function Header({ userData }) {
 
     return (
       
@@ -14,14 +14,11 @@ function Header({ data }) {
             <div className="container-header">
             <img className="logo" src={logo} alt="logo" />
                 <div>
-        
-                <h3  className="user">{data.name}</h3>
+                <h3  className="user">{userData.name}</h3>
                 <span className="puntos">
-                    <h3 className="puntos">{data.points}</h3>
+                    <h3 className="puntos">{userData.points}</h3>
                     <img className="coin" src={coin} alt="coin" />
                 </span> 
-          
-            
             </div>
         </div>
         </Fragment>  

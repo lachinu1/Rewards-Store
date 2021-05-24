@@ -13,7 +13,7 @@
     position: relative;
     width: 276px;
     height: 276px;
-
+    margin-bottom: 24px;
     background: #FFFFFF;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -27,6 +27,11 @@
     top: 12px;
     left: 12px;
     background: #FFFFFF;
+}
+
+img.product-img {
+    display: flex;
+    margin-left: 30px;
 }
 
 span.buy-blue {
@@ -95,7 +100,7 @@ hr {
 
 
 h5 {
-   
+    position: absolute;
     height: 20px;
     left: 24px;
     top: 214px;
@@ -109,6 +114,7 @@ h5 {
 }
 
 h6 {
+    position: absolute;
     height: 23px;
     left: 24px;
     top: 235px;
@@ -118,8 +124,6 @@ h6 {
     font-weight: normal;
     font-size: 18px;
     line-height: 23px;
-    /* identical to box height */
     letter-spacing: -0.0423529px;
     color: #616161;
-
 }

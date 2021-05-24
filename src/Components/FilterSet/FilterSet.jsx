@@ -1,30 +1,40 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import "./styles.css";
 
+//Proveedor de Productos
+import { AppContext } from '../../Context/AppContext';
 
 
+function FilterSet() {
 
-function filterSet({ data, updateCategorySelected }) {
+// Recibe la info del proveedor
+    const { productsItems,  updateCategorySelected } = React.useContext(AppContext);
+    
+    
 
     return (
-        <>
+        <Fragment>
             <div className="container-filter">
                 <div className="line"></div>
                 <span className="filter-1">
                     <h3 className="text">Ordenar por:</h3>
                 </span>
                  {/* Filtros por precio */}
-                <button className="filter">Más recientes</button>
+                <button className="filter" onClick={() => updateCategorySelected(productsItems.cost)}>Más recientes</button>
                 <button className="filter">Menor precio</button>
                 <button className="filter">Mayor precio</button>
             </div>
 
             {/* Filtros por categorías */}
             <div className="container-category">
-                <div className="container-buttons"  onClick={() => updateCategorySelected(data.category)}>
-                    <button className="btn-category">
+                <div className="container-buttons">
+                    <button className="btn-category" onClick={() => updateCategorySelected(productsItems.category)}>
+                        <img className="icono" src="https://image.flaticon.com/icons/png/512/1077/1077969.png" alt="TODAS"></img>
+                        TODAS
+                    </button>
+                    <button className="btn-category" onClick={() => updateCategorySelected(productsItems.category)}>
                         <img className="icono" src="https://img-premium.flaticon.com/png/512/1530/1530274.png?token=exp=1621710611~hmac=a204e814d0b552ad7fdcd6078341c990" alt=""></img>
-                    LAPTOPS
+                        LAPTOPS
                     </button>
                     <button className="btn-category">
                         <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972490.png" alt=""></img>
@@ -68,9 +78,9 @@ function filterSet({ data, updateCategorySelected }) {
                     </button>
                 </div>
             </div>
-        </>
+        </Fragment>
     );
 }
 
 
-export default filterSet;
+export default FilterSet;
