@@ -2,21 +2,31 @@ import React, {useState, useEffect, Fragment} from 'react';
 import "./styles.css";
 
 //Componentes
-import Card from "../Card/Card";
+
+import FilterSet from '../filterSet/FilterSet';
+import Card from "../card/Card";
 
 
 
 function Products() {
 
+    //Maneja el estado de los productos
+    const [productsItems, setProductsItems] = useState([]);
 
- //Maneja el estado de los productos
- const [productsItems, setProductsItems] = useState([]);
+    //Maneja el estado de los filtros de Categorías
+    const [categorySelected, setCategorySelected] = useState('');
 
- //Maneja el estado de los filtros de Categorías
- const [categorySelected, setCategorySelected] = useState('');
 
-      
- 
+    //Maneja el Ppaginador
+    const [pageSize]=useState(16);
+    const [pageIndex,setPageIndex]=useState(0);
+
+    const prevPage = (e) => {setPageIndex(pageIndex > 0 ? pageIndex - 1 : 0);
+    }
+    const nextPage = (e) => {
+        setPageIndex(pageIndex < Math.floor(productsItems.length / pageSize) ? pageIndex + 1 : pageIndex);
+    }
+
 
     //Trae los productos  con el método GET
     useEffect(() => {
@@ -35,13 +45,18 @@ function Products() {
                 console.log(results);
             })
     }, []);
-    
-    
 
+
+    //Función para actualizar el estado de categorySelected
+   function updateCategorySelected (categorySelected) {
+    setCategorySelected(categorySelected)
+    }
+    
 
     return (
         <Fragment>
-            <div className="container-products">
+            <FilterSet productsItems={productsItems} updateCategorySelected={updateCategorySelected}/>
+            <div className="container-products" pageOne={16} pageTwo={32}>
                 <Card productsItems={productsItems} setProductsItems={setProductsItems} categorySelected={categorySelected}/>
             </div>
         </Fragment> 

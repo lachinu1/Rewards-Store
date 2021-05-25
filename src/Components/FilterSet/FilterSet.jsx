@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 import "./styles.css";
 
 //Proveedor de Productos
-import { AppContext } from '../../Context/AppContext';
+// import { AppContext } from '../../context/AppContext';
 
 
-function FilterSet() {
+function FilterSet({ productsItems, updateCategorySelected }) {
 
 // Recibe la info del proveedor
-    const { productsItems,  updateCategorySelected } = React.useContext(AppContext);
+    // const { productsItems,  updateCategorySelected } = React.useContext(AppContext);
     
     
 
@@ -20,7 +20,7 @@ function FilterSet() {
                     <h3 className="text">Ordenar por:</h3>
                 </span>
                  {/* Filtros por precio */}
-                <button className="filter" onClick={() => updateCategorySelected(productsItems.cost)}>Más recientes</button>
+                <button className="filter">Más recientes</button>
                 <button className="filter">Menor precio</button>
                 <button className="filter">Mayor precio</button>
             </div>
@@ -28,7 +28,7 @@ function FilterSet() {
             {/* Filtros por categorías */}
             <div className="container-category">
                 <div className="container-buttons">
-                    <button className="btn-category" onClick={() => updateCategorySelected(productsItems.category)}>
+                    <button className="btn-category">
                         <img className="icono" src="https://image.flaticon.com/icons/png/512/1077/1077969.png" alt="TODAS"></img>
                         TODAS
                     </button>
