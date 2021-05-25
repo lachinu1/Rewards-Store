@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./styles.css";
 
 import coin from '../../Images/coin.svg';
@@ -39,20 +39,20 @@ function Points() {
     
 
     return (
-        <Fragment>
+        <React.Fragment>
             <div className="container-banner">
                 <div className="header">
                     <h3>No te quedes sin puntos<img className="coin-points" src={coin} alt="coin" /></h3>
-                    <h5 className="puntos">Cargá tus puntos siempre que necesites</h5>
+                    <h5 className="puntos">Cargá tus puntos siempre que necesites y aprovechá los beneficios!</h5>
                     <form method ="post"> 
-                        <input type="text" className="points" placeholder="Usuario"></input>&nbsp;&nbsp;
-                        <input type="password" className="points" placeholder="Contraseña"></input>&nbsp;&nbsp;
+                        <input type="text" className="points" placeholder="Usuario" autocomplete="off"></input>&nbsp;&nbsp;
+                        <input type="password" className="points" placeholder="Contraseña" autocomplete="off"></input>&nbsp;&nbsp;
                         <button type="submit" className="btn-points" >Cargar Puntos</button>
                     </form> 
                     <div className="img"></div>
                 </div>
             </div>
-        </Fragment>  
+        </React.Fragment> 
        
     );
 }

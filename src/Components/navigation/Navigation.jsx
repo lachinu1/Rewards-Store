@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import "./styles.css";
@@ -36,7 +36,7 @@ function Navigation() {
 
     
     return (
-        <Fragment>
+          <React.Fragment>
             <nav className="container-header">
                 <img className="logo" src={logo} alt="logo" />
                 <div>
@@ -58,7 +58,7 @@ function Navigation() {
                     </span> 
                 </div>
             </nav>
-        </Fragment>  
+          </React.Fragment> 
        
     );
 }

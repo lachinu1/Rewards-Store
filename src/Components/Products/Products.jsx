@@ -5,6 +5,7 @@ import "./styles.css";
 
 import FilterSet from '../filterSet/FilterSet';
 import Card from "../card/Card";
+import Pagination from "../pagination/Pagination";
 
 
 
@@ -17,15 +18,28 @@ function Products() {
     const [categorySelected, setCategorySelected] = useState('');
 
 
-    //Maneja el Ppaginador
-    const [pageSize]=useState(16);
-    const [pageIndex,setPageIndex]=useState(0);
+    // paginador
+    const [pageIndex, setPageIndex] = useState(1);
+    const [pageSize, setPageSize] = useState(16);
 
-    const prevPage = (e) => {setPageIndex(pageIndex > 0 ? pageIndex - 1 : 0);
-    }
-    const nextPage = (e) => {
-        setPageIndex(pageIndex < Math.floor(productsItems.length / pageSize) ? pageIndex + 1 : pageIndex);
-    }
+    const [visibility, setVisivility] = useState(false);
+
+    // Paginadores
+    function prevPage(e) {
+        setPageIndex(prevState => (
+            {pageIndex: prevState.pageIndex > 0 ? prevState.pageIndex - 1 : 0}
+        ));
+    };
+
+    function nextPage(e) {
+        setPageSize(prevState => (
+            { pageIndex: prevState.pageIndex < Math.floor(prevState.dataRows.length / prevState.pageSize) ? prevState.pageIndex + 1 : prevState.pageIndex }
+        ));
+    };
+    
+ 
+        
+   
 
 
     //Trae los productos  con el método GET
@@ -55,7 +69,18 @@ function Products() {
 
     return (
         <Fragment>
-            <FilterSet productsItems={productsItems} updateCategorySelected={updateCategorySelected}/>
+            <div style={{display: visibility ? '' : 'none'}}>
+                <label> {productsItems.length === 0 ? '' : 
+                    "16" + " de " + `${productsItems.length}` + "productos" }</label>
+            </div>
+            <Pagination
+                // pageSelected={pageSelected}
+                // currentPage={currentPage}
+                // itemsPage={itemsPage}
+                totalItems={productsItems.length}/>
+            <FilterSet
+                productsItems={productsItems}
+                updateCategorySelected={updateCategorySelected} />
             <div className="container-products" pageOne={16} pageTwo={32}>
                 <Card productsItems={productsItems} setProductsItems={setProductsItems} categorySelected={categorySelected}/>
             </div>

@@ -35,7 +35,7 @@ img.product-img {
 }
 
 span.buy-blue {
-    position: relative;
+    position: absolute;
     width: 42px;
     height: 42px;
     left: 222px;
@@ -43,7 +43,7 @@ span.buy-blue {
 }
 
 span.buy-white {
-     position: relative;
+     position: absolute;
      width: 42px;
      height: 42px;
      left: 222px;

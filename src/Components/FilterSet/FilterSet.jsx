@@ -33,7 +33,7 @@ function FilterSet({ productsItems, updateCategorySelected }) {
                         TODAS
                     </button>
                     <button className="btn-category" onClick={() => updateCategorySelected(productsItems.category)}>
-                        <img className="icono" src="https://img-premium.flaticon.com/png/512/1530/1530274.png?token=exp=1621710611~hmac=a204e814d0b552ad7fdcd6078341c990" alt=""></img>
+                        <img className="icono" src="https://image.flaticon.com/icons/png/512/595/595355.png" alt=""></img>
                         LAPTOPS
                     </button>
                     <button className="btn-category">
