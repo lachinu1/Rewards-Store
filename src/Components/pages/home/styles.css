@@ -12,11 +12,10 @@
 
 
 div.container-home {
-
     width: 100%;
-    height: 560px;
+    /* height: 560px; */
     left: 0px;
-    top: 0px;
+    /* margin-top: -17px; */
     background: #FFFFFF;
   }
 
@@ -36,7 +35,7 @@ div.container-home {
     height: 80px;
     left: 9.17%;
     right: 69.03%;
-    top: calc(50% - 80px/2 + 118px);
+    top: calc(44% - 80px/2 + 118px);
 
     font-family: 'Source Sans Pro';
     font-style: normal;
@@ -48,7 +47,7 @@ div.container-home {
 
   div.banner {
     width: 100%;
-    height: 400px;
+    height: 388px;
     background-size: 100% 100%;
     background-repeat:no-repeat;
     background: url(/src/Images/header-x1.png);
@@ -59,3 +58,16 @@ div.container-home {
     width: 100%;
     
   } 
+
+  .container-products {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 25px;
+    /* height: 2055px; */
+    left: 0px;
+    top: -80px;
+    background: #dadada54;
+}

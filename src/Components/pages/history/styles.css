@@ -12,9 +12,8 @@
 
   .history-container {
     width: 100%;
-    height: 560px;
+    /* height: 560px; */
     left: 0px;
-    top: 0px;
     background: #FFFFFF;
   }
 
@@ -43,12 +42,12 @@
     color: #FFFFFF;
   }
 
-  div.banner {
+  div.img-banner {
     width: 100%;
-    height: 400px;
+    height: 388px;
     background-size: 100% 100%;
     background-repeat:no-repeat;
-    background: url(/src/Images/header-x1.png);
+    background: url(/src/Images/header-x4.png);
     background-size: cover;
   }
 
@@ -96,3 +95,9 @@
     letter-spacing: -0.15px;
     color: #616161;
   }
+
+  /* h6.paginas {
+    position: absolute;
+    top: 186px;
+    left: 58px;
+  } */

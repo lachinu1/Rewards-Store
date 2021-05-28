@@ -1,35 +1,30 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom'; 
 
-
-
 //Componentes
 import Navigation from './components/navigation/Navigation';
-import Home from './components/home/Home';
+import { Home } from './components/pages/home/Home';
 import Points from './components/points/Points';
-import Products from './components/products/Products';
-import History from './components/history/History';
-// import FilterSet  from './components/filterSet/FilterSet';
-// import {Footer} from './components/Footer/Footer';
-
+import { History } from './components/pages/history/History';
 
 //Proveedor
-// import { AppProvider } from './context/AppContext';
+import { UserProvider } from './context/UserContext';
 
 
 
-function App()  { 
+function App() {
   
   return (
     <div>
       <Navigation />
+      <UserProvider>
         <Switch>
             <Route path = "/"  component = {Home} exact />
-            <Route path = "/productos" component = {Products} exact />
             <Route path="/puntos" component = {Points} exact />
             <Route path="/mi-historial" component = {History} exact />
             {/* <Route path = "/notFound" component = {NotFound} exact /> */}
-          </Switch>
+        </Switch>
+        </UserProvider>
       </div>
   );
 }
