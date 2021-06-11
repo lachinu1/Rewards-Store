@@ -1,0 +1,76 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "image_src": "https://image.flaticon.com/icons/png/512/1077/1077969.png",
+        "name": "TODAS",
+        "category": ""
+      },
+      {
+        "id": 2,
+        "image_src": "https://image.flaticon.com/icons/png/512/595/595355.png",
+        "name": "LAPTOPS",
+        "category": "Laptops"
+      },
+      {
+        "id": 3,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972490.png",
+        "name": "CÁMARAS",
+        "category": "Cameras"
+      },
+      {
+        "id": 4,
+        "image_src": "https://image.flaticon.com/icons/png/512/4463/4463326.png",
+        "name": "SMART HOME",
+        "category": "Smart Home"
+      },
+      {
+        "id": 5,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972413.png",
+        "name": "AUDIO",
+        "category": "Audio"
+      },
+      {
+        "id": 6,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972463.png",
+        "name": "MONITORES Y TV",
+        "category": "Monitors & TV"
+      },
+      {
+        "id": 7,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972418.png",
+        "name": "ACCESORIOS PC",
+        "category": "PC Accessories"
+      },
+      {
+        "id": 8,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972463.png",
+        "name": "GAMING",
+        "category": "Gaming"
+      },
+      {
+        "id": 9,
+        "image_src": "https://image.flaticon.com/icons/png/512/1530/1530273.png",
+        "name": "TABLETS Y E-READERS",
+        "category": "Tablets & E-readers"
+      },
+      {
+        "id": 10,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972487.png",
+        "name": "TELÉFONOS",
+        "category": "Phones"
+      },
+      {
+        "id": 11,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972342.png",
+        "name": "DRONES",
+        "category": "Drones"
+      },
+      {
+        "id": 12,
+        "image_src": "https://image.flaticon.com/icons/png/512/2972/2972485.png",
+        "name": "ACCESORIOS TELÉFONO",
+        "category": "Phone Accessories"
+      }
+    ]
+  }

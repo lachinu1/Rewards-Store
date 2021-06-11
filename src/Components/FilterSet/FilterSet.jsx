@@ -3,6 +3,7 @@ import "./styles.css";
 import axios from 'axios';
 import { usePagination } from '../../hooks';
 import styled from 'styled-components';
+import data from '../../data.json';
 
 //Componentes
 import ProductGrid from '../../common/ProductGrid';
@@ -78,7 +79,7 @@ export function FilterSet() {
     setCategorySelected(categorySelected)
     }
 
-    //Cambio de categoría
+    // Cambio de categoría
     // const handleChangeCategory = (e) => {
     //     setCategory(e.target.value)
     // }
@@ -104,64 +105,24 @@ export function FilterSet() {
     }
 
 
-    
-    
 
     return (
         <React.Fragment>
-             {/* Filtros por categorías */}
-             <div className="container-category">
-                <div className="container-buttons">
-                    <button className="btn-category" key="All" value={category} onClick={() => updateCategorySelected(category)}>
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/1077/1077969.png" alt=""></img>
-                        TODAS
-                    </button>
-                    <button className="btn-category" key="Laptops" value={category} onClick={() => updateCategorySelected(category)}>
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/595/595355.png" alt=""></img>
-                        LAPTOPS
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972490.png" alt=""></img>
-                        CÁMARAS
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/4463/4463326.png" alt=""></img>
-                        SMART HOME
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972413.png" alt=""></img>
-                        AUDIO
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972463.png" alt=""></img>
-                        MONITORES Y TV
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972418.png" alt=""></img>
-                        ACCESORIOS PC
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972351.png" alt=""></img>
-                        GAMING
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/1530/1530273.png" alt=""></img>
-                        TABLETS Y E-READERS
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972487.png" alt=""></img>
-                        TELÉFONOS
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972342.png" alt=""></img>
-                        DRONES
-                    </button>
-                    <button className="btn-category">
-                        <img className="icono" src="https://image.flaticon.com/icons/png/512/2972/2972485.png" alt=""></img>
-                        ACCESORIOS TELÉFONO
-                    </button>
-                </div>
-            </div>
+        {/* Filtros por categorías */}
+        <div className="container-category">
+          {/* Mapeo de los botones filtros */}
+          {
+            data.categories.map((data) => (
+              <div className="container-buttons">
+                <button className="btn-category" onClick={() => updateCategorySelected(data.category)}>
+                    <img className="icono" src={data.image_src} alt=""></img>
+                    {data.name}
+                </button>
+              </div>
+            ))
+          }
+        </div>
+          {/* Paginador */}
             <Controls>
                 <ControlsInner>
                 <h6 className="paginas">Página {activePage} de {pagesTotal}</h6>
@@ -184,7 +145,7 @@ export function FilterSet() {
     );
 }
 
-
+//Estilos
 const Controls = styled(Container)`
   display: flex;
   padding: 0 6rem;

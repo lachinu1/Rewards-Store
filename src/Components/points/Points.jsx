@@ -3,7 +3,7 @@ import "./styles.css";
 import axios from 'axios';
 
 //Imagenes
-import coin from '../../Images/coin.svg';
+import CoinIcon from '../../Images/coin.svg';
 import AddIcon from '../../Images/add-circle.svg';
 
 //Contexto
@@ -89,32 +89,33 @@ function Points() {
     const handleClickCoins = () => {
     setDialogOpen(true);
     }
-    
-  
+
+
     //Hace el POST a la API para enviar los datos de los puntos agregados
     const handleDialogClose = async (points) => {
-        if (points) {
-          try {
-            const response = await axios.post(`${API_URI}/user/points`, { amount: points }, { headers });
-            const pointsUpdatedMessage = response.data?.message;
-            if (pointsUpdatedMessage === "Points Updated") {
-              setDialogOpen(false);
-              getUserInfo();
-            }
-          } catch (error) {
-            console.error(error)
+      if (points) {
+        try {
+          const response = await axios.post(`${API_URI}/user/points`, { amount: points }, { headers });
+          const pointsUpdatedMessage = response.data?.message;
+          if (pointsUpdatedMessage === "Points Updated") {
+            setDialogOpen(false);
+            getUserInfo();
           }
-        } else {
-          setDialogOpen(false);
+        } catch (error) {
+          console.error(error)
         }
-      } 
-    
+      } else {
+        setDialogOpen(false);
+      }
+    } 
+
+  
 
     return (
         <React.Fragment>
             <div className="container-banner-points">
                 <div className="header-points">
-                    <h3>No te quedes sin puntos<img className="coin-points" src={coin} alt="coin" /></h3>
+                    <h3>No te quedes sin puntos<img className="coin-points" src={CoinIcon} alt="coin" /></h3>
                     <h5 className="puntos">Cargá tus puntos siempre que necesites y aprovechá los beneficios!</h5>
                     <button type="submit" className="btn-points" onClick={handleClickCoins}>Cargar Puntos</button>
                     <Dialog

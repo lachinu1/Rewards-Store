@@ -16,7 +16,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-
 //Contexto
 import { UserContext } from '../context/UserContext';
 
@@ -24,7 +23,6 @@ import { UserContext } from '../context/UserContext';
 import { ReactComponent as BuyIconBlue } from '../Images/buy-blue.svg';
 import { ReactComponent as BuyIconWhite } from '../Images/buy-white.svg'
 import CoinIconSVG, { ReactComponent as CoinIcon } from '../Images/coin.svg';
-
 
 //Datos API 
 const API_URI = "https://coding-challenge-api.aerolab.co";
@@ -36,18 +34,26 @@ const headers = {
 }
 
 
+/**
+ * function ProductCard, recibe como parámetro los datos del producto
+ * para luego mapear las cards.
+ * Desde acá, se realiza el POST a la API de redeem para enviar la info.
+ */
 
 
-function ProductCard({ product, categorySelected }) {
+function ProductCard({ product }) {
 
   const [ active, setActive ] = useState(false);
   const [ dialogMessage, setDialogMessage ] = useState("success");
   const [ dialogOpen, setDialogOpen ] = useState(false);
   const { category, img, name, cost, _id } = product;
+
+  //Recibe los parámetros desde Context
   const { points, getUserInfo } = useContext(UserContext);
 
-    
-  //POST a la API de redeem para traer la info   
+
+
+  //POST a la API de redeem para enviar la info   
   const handleClick = async (productId) => {
     try {
       const response = await axios.post(`${API_URI}/redeem`, { productId }, { headers });
@@ -62,6 +68,8 @@ function ProductCard({ product, categorySelected }) {
     }
   }
     
+
+
   //Mensaje en caso de necesitar más monedas
   const handleDialogClose = () => {
     setDialogOpen(false);
@@ -83,12 +91,13 @@ function ProductCard({ product, categorySelected }) {
         </StyledPaper>
       </Grid>
     )
-}
+  }
     
-
+  
+//  Cards de los productos
   return (
     <Grid item xs={3} >
-          <StyledPaper onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} style={active ? { transform: "translateY(-10px)" } : { transform: "none" }}>
+        <StyledPaper onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} style={ active ? { transform: "translateY(-10px)" } : { transform: "none" }}>
       {active ?
         <ActivePaper>
           <IconWrapper>
@@ -117,6 +126,8 @@ function ProductCard({ product, categorySelected }) {
           </figcaption>
         </figure>
       </StyledPaper>
+
+      {/* Mensaje de la compra */}
       <Dialog
         open={dialogOpen}
         onClose={handleDialogClose}
@@ -144,6 +155,8 @@ function ProductCard({ product, categorySelected }) {
   )
 }
 
+
+//Estilos
 const StyledPaper = styled(Paper)`
   display: flex;
   flex-flow: column nowrap;
