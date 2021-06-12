@@ -135,12 +135,17 @@ img.icono {
   cursor: pointer;
 }
 
-button.btn-category:hover {
+.btn-category:hover {
   background: #15dbff;
   color: #ffffff;
 }
 
 button.btn-category:focus {
+  background: #15dbff;
+  color: #ffffff;
+}
+
+.active.btn-category {
   background: #15dbff;
   color: #ffffff;
 }

@@ -1,8 +1,12 @@
 import { useState } from "react";
 
+
+
 export const usePagination = (items, itemsPerPage, sort = "") => {
   const [activePage, setActivePage] = useState(1);
-  const pagesTotal = Math.ceil(items.length / itemsPerPage);
+  // const pagesTotal = Math.ceil(items.length / itemsPerPage);
+  const itemsTotal = Math.ceil(items.length / itemsPerPage);
+
 
   const getCurrentItems = () => {
     const start = (activePage - 1) * itemsPerPage;
@@ -16,29 +20,35 @@ export const usePagination = (items, itemsPerPage, sort = "") => {
     }
   };
 
+  const getItems = () => {
+    const start = (activePage - 1 ) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return end
+  }
+
   const nextPage = () => {
-    // the callback fn with min calc fix an infinite empty pages overflow
-    setActivePage((activePage) => Math.min(activePage + 1, pagesTotal));
+    setActivePage((activePage) => Math.min(activePage + 1, itemsTotal));
   };
 
   const prevPage = () => {
-    // same with the opposite extreme
     setActivePage((activePage) => Math.max(activePage - 1, 1));
   };
 
   const getPage = (page) => {
-    // min page is 1
+    // min page es 1
     const pageNumber = Math.max(1, page);
-    // max page is pagesTotal
-    setActivePage((activePage) => Math.min(pageNumber, pagesTotal));
+    // max page es itemsTotal
+    setActivePage((activePage) => Math.min(pageNumber, itemsTotal));
   };
 
   return {
     getCurrentItems,
+    getItems,
     getPage,
     nextPage,
     prevPage,
+    itemsPerPage,
     activePage,
-    pagesTotal,
+    itemsTotal,
   };
 };

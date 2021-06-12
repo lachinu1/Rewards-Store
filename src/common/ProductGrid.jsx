@@ -12,7 +12,7 @@ function ProductGrid({ products, categorySelected }) {
 
   return (
     <GridWrapper>
-       <Grid container spacing={6}>
+       <Grid container spacing={6} autoPageSize pagination {...products}>
         {
           products.filter((value) => {
             return categorySelected === '' || categorySelected === 'TODAS' || value.category === categorySelected

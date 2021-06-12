@@ -3,6 +3,13 @@ import Grid from '@material-ui/core/Grid';
 
 import ItemCard from './ItemCard';
 
+
+
+/** function ItemGrid mapea las cards de los productos 
+ *  que van al historial. 
+ */
+
+
 function ItemGrid({ items }) {
   const cards = items.map(item => <ItemCard key={item.createDate} item={item} />)
   return (

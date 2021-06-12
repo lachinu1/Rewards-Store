@@ -22,6 +22,9 @@ const headers = {
 }
 
 
+/** function History es la sección que guarda
+ *  todas las compras realizadas.  
+ */
 
 
 export function History() {
@@ -47,10 +50,10 @@ export function History() {
   //Paginador
     const { 
         getCurrentItems,
+        getItems,
         nextPage,
         prevPage,
-        activePage,
-        pagesTotal } = usePagination(items, 10, "");
+        itemsPerPage} = usePagination(items, 10, "");
     
 
   
@@ -62,7 +65,7 @@ export function History() {
         </div>
         <Controls>
             <ControlsInner>
-                Página {activePage} de {pagesTotal}
+                {itemsPerPage} de {getItems()}
                 <VerticalDivider />
                 <StyledArrow src={ArrowLeft} alt="arrow-left" onClick={() => prevPage()} />
                 <StyledArrow src={ArrowRight} alt="arrow-rigth" onClick={() => nextPage()} />
@@ -116,4 +119,7 @@ const StyledArrow = styled.img`
   align-self: center;
   cursor: pointer;
   margin-right: 1rem;
+  background: #00000047;
+  border-radius: 19px;
+  border: 1px solid #f3f3f3;
 ` 

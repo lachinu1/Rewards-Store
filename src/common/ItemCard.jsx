@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 //Material-ui
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -9,6 +8,10 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
 
+
+/** function ItemCard muestra la información 
+ *  de historial de compra
+ */
 
 
 function ItemCard({ item }) {

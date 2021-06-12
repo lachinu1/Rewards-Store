@@ -15,12 +15,12 @@ import ArrowRight from '../../Images/arrow-right.svg';
 
 //Material-ui
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
-import Chip from '@material-ui/core/Chip';
+// import Typography from '@material-ui/core/Typography';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import Chip from '@material-ui/core/Chip';
 
 
 //Datos API 
@@ -33,20 +33,27 @@ const headers = {
 }
 
 
+/** function FilterSet hace el GET a la API para traer toda la info de los productos
+ *  y luego realiza todos los filtrados, de acuerdo a la categoría o al rango
+ *  de precio. 
+ */
+
 
 
 export function FilterSet() {
 
-    //Maneja el estado de los items
+    //Estado de los items
     const [products, setProducts] = useState([]);
-    //Maneja el estado de la lista de categorías
+    //Estado de la lista de categorías
     const [categoryList, setCategoryList] = useState([]);
-    //Maneja el estado de las categorías
-    const [ category, setCategory ] = useState('');
+    //Estado de las categorías
+    const [category, setCategory] = useState('');
     //Estado de los precios
-    const [ sortPrice, setSortPrice ] = useState(''); // '' \ 'ASC' | 'DESC'
-    //Maneja el estado de los filtros de Categorías
+    const [sortPrice, setSortPrice] = useState(''); // '' \ 'ASC' | 'DESC'
+    //Estado de los filtros por Categoría
     const [categorySelected, setCategorySelected] = useState('');
+    //Estado del filtro por categoría seleccionado
+    const [selected, setSelected] = useState(true);
 
 
      //GET a la API para traer toda la info de los productos
@@ -67,11 +74,11 @@ export function FilterSet() {
 
     //Paginador
     const { 
-        getCurrentItems,
-        nextPage,
-        prevPage,
-        activePage,
-        pagesTotal } = usePagination(products.filter(product => category ? product.category === category : true), 16, sortPrice);
+      getCurrentItems,
+      getItems,
+      nextPage,
+      prevPage,
+      itemsPerPage} = usePagination(products.filter(product => category ? product.category === category : true), 16, sortPrice);
 
 
     //Función para actualizar el estado de categorySelected
@@ -79,13 +86,8 @@ export function FilterSet() {
     setCategorySelected(categorySelected)
     }
 
-    // Cambio de categoría
-    // const handleChangeCategory = (e) => {
-    //     setCategory(e.target.value)
-    // }
 
-
-    //Filtro de precio
+    //Filtro por precio
       const handleClickSort = (order) => {
         if (order === "ASC") {
           if (sortPrice === "ASC") {
@@ -104,18 +106,27 @@ export function FilterSet() {
         }
     }
 
-
+    //Cambia el modo del filtro por categoría
+    const handleChange = () => {
+      setSelected(selected === "btn-category");
+    };
+  
+  
 
     return (
-        <React.Fragment>
+      <React.Fragment>
         {/* Filtros por categorías */}
         <div className="container-category">
-          {/* Mapeo de los botones filtros */}
+          {/* Mapeo de los botones */}
           {
-            data.categories.map((data) => (
+            data.categories.map((data, i) => (
               <div className="container-buttons">
-                <button className="btn-category" onClick={() => updateCategorySelected(data.category)}>
-                    <img className="icono" src={data.image_src} alt=""></img>
+                <button
+                  key={i}
+                  className={data.value === 1 && selected ? "btn-category active" : "btn-category"}
+                  value={data.value}
+                  onClick={() => { updateCategorySelected(data.category); handleChange(); }}>
+                  <img className="icono" src={data.image_src} alt=""></img>
                     {data.name}
                 </button>
               </div>
@@ -125,7 +136,7 @@ export function FilterSet() {
           {/* Paginador */}
             <Controls>
                 <ControlsInner>
-                <h6 className="paginas">Página {activePage} de {pagesTotal}</h6>
+                <h6 className="paginas"> {itemsPerPage} de {getItems()}</h6>
                 <VerticalDivider />
                 <div className="container-filter">
                     <span className="filter-1">
@@ -140,8 +151,9 @@ export function FilterSet() {
                 </div>
                 </ControlsInner>
             </Controls>
+            {/* Grilla con los productos */}
             <ProductGrid products={getCurrentItems()} categorySelected={categorySelected}/>
-        </React.Fragment>
+      </React.Fragment>
     );
 }
 
@@ -175,4 +187,7 @@ const StyledArrow = styled.img`
   width: 35px;
   align-self: flex-end;
   cursor: pointer;
+  background: #00000047;
+  border-radius: 19px;
+  border: 1px solid #f3f3f3;
 ` 
