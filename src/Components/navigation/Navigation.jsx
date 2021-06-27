@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffec, useContext} from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import axios from 'axios';
 import "./styles.css";
 
 //Imagenes
@@ -9,19 +8,17 @@ import logo from '../../Images/aerolab-logo.svg';
 import CoinIcon from '../../Images/coin.svg';
 import AddIcon from '../../Images/add-circle.svg';
 import HistoryMallIcon from '../../Images/history_mall.svg';
-
 import { UserContext } from '../../context/UserContext';
 
 
 //Datos API 
-const API_URI = "https://coding-challenge-api.aerolab.co";
-const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGIxMDE4MDliNzc4MTAwMjA5YzVhYWQiLCJpYXQiOjE2MjIyMTI5OTJ9.SUFmuuHpeHt8ZnTP-gz0jxPam3vP-R4uJkVuM6Pwx4A";
-const headers = {
-  "Content-Type": "application/json",
-  "Accept" : "application/json",
-  Authorization: `Bearer ${API_KEY}`
-}
-
+// const API_URI = "https://coding-challenge-api.aerolab.co";
+// const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGIxMDE4MDliNzc4MTAwMjA5YzVhYWQiLCJpYXQiOjE2MjIyMTI5OTJ9.SUFmuuHpeHt8ZnTP-gz0jxPam3vP-R4uJkVuM6Pwx4A";
+// const headers = {
+//   "Content-Type": "application/json",
+//   "Accept" : "application/json",
+//   Authorization: `Bearer ${API_KEY}`
+// }
 
 
 function Navigation() {

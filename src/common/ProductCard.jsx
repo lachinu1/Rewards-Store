@@ -139,9 +139,9 @@ function ProductCard({ product }) {
           <DialogContentText id="alert-dialog-description">
           {
             dialogMessage === "success" ?
-            "La transacción se ha realizado con éxito"
+            "La compra se realizó con éxito"
             :
-            "Hubo un problema con la transacción, intente de nuevo"
+            "Hubo un problema con la compra, intentá de nuevo"
           }
           </DialogContentText>
         </DialogContent>
@@ -162,8 +162,6 @@ const StyledPaper = styled(Paper)`
   flex-flow: column nowrap;
   padding: 1rem;
   position: relative;
-  width: 276px;
-  height: 276px;
 `
 const ActivePaper = styled(Paper)`
   display: flex;
@@ -171,8 +169,8 @@ const ActivePaper = styled(Paper)`
   background-color: rgba(37,187,241, 0.85);
   z-index: 1;
   overflow: hidden;
-  width: 276px;
-  height: 276px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;

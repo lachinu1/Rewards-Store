@@ -4,8 +4,7 @@ import { useState } from "react";
 
 export const usePagination = (items, itemsPerPage, sort = "") => {
   const [activePage, setActivePage] = useState(1);
-  // const pagesTotal = Math.ceil(items.length / itemsPerPage);
-  const itemsTotal = Math.ceil(items.length / itemsPerPage);
+  const pagesTotal = Math.ceil(items.length / itemsPerPage);
 
 
   const getCurrentItems = () => {
@@ -27,7 +26,7 @@ export const usePagination = (items, itemsPerPage, sort = "") => {
   }
 
   const nextPage = () => {
-    setActivePage((activePage) => Math.min(activePage + 1, itemsTotal));
+    setActivePage((activePage) => Math.min(activePage + 1, pagesTotal));
   };
 
   const prevPage = () => {
@@ -38,7 +37,7 @@ export const usePagination = (items, itemsPerPage, sort = "") => {
     // min page es 1
     const pageNumber = Math.max(1, page);
     // max page es itemsTotal
-    setActivePage((activePage) => Math.min(pageNumber, itemsTotal));
+    setActivePage((activePage) => Math.min(pageNumber, pagesTotal));
   };
 
   return {
@@ -47,8 +46,7 @@ export const usePagination = (items, itemsPerPage, sort = "") => {
     getPage,
     nextPage,
     prevPage,
-    itemsPerPage,
     activePage,
-    itemsTotal,
+    pagesTotal,
   };
 };

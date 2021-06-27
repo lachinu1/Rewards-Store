@@ -12,6 +12,7 @@ import Container from '@material-ui/core/Container';
 import ArrowLeft from '../../../Images/arrow-left.svg';
 import ArrowRight from '../../../Images/arrow-right.svg';
 
+
 //Datos API 
 const API_URI = "https://coding-challenge-api.aerolab.co";
 const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGIxMDE4MDliNzc4MTAwMjA5YzVhYWQiLCJpYXQiOjE2MjIyMTI5OTJ9.SUFmuuHpeHt8ZnTP-gz0jxPam3vP-R4uJkVuM6Pwx4A";
@@ -49,26 +50,26 @@ export function History() {
 
   //Paginador
     const { 
-        getCurrentItems,
-        getItems,
-        nextPage,
-        prevPage,
-        itemsPerPage} = usePagination(items, 10, "");
+      getCurrentItems,
+      nextPage,
+      prevPage,
+      activePage,
+      pagesTotal } = usePagination(items, 10, "");
     
 
   
     return (
       <HistoryWrapper>
-        <div className="history-header">
+        <div>
             <h1 className="title">Mi Historial</h1>
             <div className="img-banner"></div>
         </div>
         <Controls>
             <ControlsInner>
-                {itemsPerPage} de {getItems()}
+              Página {activePage} de {pagesTotal}
                 <VerticalDivider />
                 <StyledArrow src={ArrowLeft} alt="arrow-left" onClick={() => prevPage()} />
-                <StyledArrow src={ArrowRight} alt="arrow-rigth" onClick={() => nextPage()} />
+                <StyledArrow src={ArrowRight} alt="arrow-right" onClick={() => nextPage()} />
             </ControlsInner>
         </Controls>
         <ItemGrid items={getCurrentItems()} />
@@ -88,7 +89,6 @@ const Controls = styled(Container)`
   padding: 0 6rem;
   margin-top: 1rem;
   align-items: center;
-  align-self: flex-end;
 `
 
 const ControlsInner = styled(Container)`
@@ -109,13 +109,11 @@ const VerticalDivider = styled.div`
   background-color: lightgray;
   margin: 0 2rem;
   align-self: flex-end;
-  margin-top: -25px;
-  margin-left: 111px;
 `
 
 const StyledArrow = styled.img`
-  height: 35px;
-  width: 35px;
+  height: 32px;
+  width: 32px;
   align-self: center;
   cursor: pointer;
   margin-right: 1rem;

@@ -75,10 +75,10 @@ export function FilterSet() {
     //Paginador
     const { 
       getCurrentItems,
-      getItems,
+      activePage,
       nextPage,
       prevPage,
-      itemsPerPage} = usePagination(products.filter(product => category ? product.category === category : true), 16, sortPrice);
+      pagesTotal} = usePagination(products.filter(product => category ? product.category === category : true), 16, sortPrice);
 
 
     //Función para actualizar el estado de categorySelected
@@ -136,7 +136,7 @@ export function FilterSet() {
           {/* Paginador */}
             <Controls>
                 <ControlsInner>
-                <h6 className="paginas"> {itemsPerPage} de {getItems()}</h6>
+                <h6 className="paginas"> Página {activePage} de {pagesTotal}</h6>
                 <VerticalDivider />
                 <div className="container-filter">
                     <span className="filter-1">
