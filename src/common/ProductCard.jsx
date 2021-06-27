@@ -129,8 +129,10 @@ function ProductCard({ product }) {
         onClose={handleDialogClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        display= "flex"
+
       >
-        <DialogTitle id="alert-dialog-title">{dialogMessage === "success" ? "¡Genial!" : "¡Error!"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title"> {dialogMessage === "success" ? "¡Genial!" : "¡Error!"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
           {
@@ -179,7 +181,6 @@ const ImgWrapper = styled.img`
   width: 100%;
   border-bottom: 1px solid lightgray;
 `
-
 const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
@@ -205,9 +206,9 @@ const StyledChip = styled(Chip)`
 `
 
 const StyledButton = styled(Button)`
-  background-color: "#dadada";
+  background-color: "#fafafa";
+  border-radius: 20px;
   margin-top: 0.5rem;
-  border-radius: 20.5px;
 `
 
 export default ProductCard;

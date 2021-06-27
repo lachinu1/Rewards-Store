@@ -15,6 +15,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 function ItemCard({ item }) {
+  
   const { category, cost, createDate, img, name, productId } = item;
 
   return (
