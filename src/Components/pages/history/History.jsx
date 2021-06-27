@@ -64,6 +64,7 @@ export function History() {
             <h1 className="title">Mi Historial</h1>
             <div className="img-banner"></div>
         </div>
+        <div className="containerHistory">
         <Controls>
             <ControlsInner>
               Página {activePage} de {pagesTotal}
@@ -72,7 +73,8 @@ export function History() {
                 <StyledArrow src={ArrowRight} alt="arrow-right" onClick={() => nextPage()} />
             </ControlsInner>
         </Controls>
-        <ItemGrid items={getCurrentItems()} />
+          <ItemGrid items={getCurrentItems()} />
+        </div>
       </HistoryWrapper>
     )
 }

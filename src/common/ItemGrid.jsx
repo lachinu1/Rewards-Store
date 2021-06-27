@@ -3,8 +3,6 @@ import Grid from '@material-ui/core/Grid';
 
 import ItemCard from './ItemCard';
 
-
-
 /** function ItemGrid mapea las cards de los productos 
  *  que van al historial. 
  */
@@ -26,6 +24,10 @@ const GridWrapper = styled.div`
   padding: 0 6rem 4rem 6rem;
   border: 1px solid papayawhip;
   margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 export default ItemGrid;

@@ -51,8 +51,6 @@ function ProductCard({ product }) {
   //Recibe los parámetros desde Context
   const { points, getUserInfo } = useContext(UserContext);
 
-
-
   //POST a la API de redeem para enviar la info   
   const handleClick = async (productId) => {
     try {
@@ -68,8 +66,6 @@ function ProductCard({ product }) {
     }
   }
     
-
-
   //Mensaje en caso de necesitar más monedas
   const handleDialogClose = () => {
     setDialogOpen(false);
@@ -107,7 +103,7 @@ function ProductCard({ product }) {
             <CoinIcon />
             <Typography variant="h5" style={{ color: "#fafafa", fontWeight: "bold" }}>{cost}</Typography>
           </StyledContainer>
-          <StyledButton variant="contained" style={{ color: "#dadada", borderRadius: "20.5px" }}onClick={() => handleClick(_id)} >
+          <StyledButton variant="contained" style={{ color: "#dadada", borderRadius: "20.5px" }} onClick={() => handleClick(_id)} >
             Comprar ahora
           </StyledButton>
         </ActivePaper>

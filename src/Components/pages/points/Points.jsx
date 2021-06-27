@@ -3,11 +3,11 @@ import "./styles.css";
 import axios from 'axios';
 
 //Imagenes
-import CoinIcon from '../../Images/coin.svg';
-import AddIcon from '../../Images/add-circle.svg';
+import CoinIcon from '../../../Images/coin.svg';
+import AddIcon from '../../../Images/add-circle.svg';
 
 //Contexto
-import { UserContext } from '../../context/UserContext';
+import { UserContext } from '../../../context/UserContext';
 
 //Estilos de Material-ui
 import { withStyles } from '@material-ui/core/styles';
@@ -126,7 +126,7 @@ function Points() {
                         <DialogTitle id="alert-dialog-title">{"¡Conseguir más monedas!"}</DialogTitle>
                             <DialogContent>
                                 <Typography gutterBottom> 
-                                        Puedes conseguir más monedas con los siguiente montos
+                                        Podés conseguir más monedas con los siguiente montos
                                 </Typography>
                             </DialogContent>
                         <DialogActions>

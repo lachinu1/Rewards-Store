@@ -7,12 +7,11 @@ import ProductCard from './ProductCard';
 /* function ProductGrid, mapea las cards con los productos. 
 */
 
-
 function ProductGrid({ products, categorySelected }) {
 
   return (
     <GridWrapper>
-       <Grid container spacing={6} autoPageSize pagination {...products}>
+       <Grid container spacing={2}>
         {
           products.filter((value) => {
             return categorySelected === '' || categorySelected === 'TODAS' || value.category === categorySelected
@@ -25,13 +24,15 @@ function ProductGrid({ products, categorySelected }) {
   )
 }
 
-
-//Estilos
 const GridWrapper = styled.div`
   display: flex;
   padding: 0 6rem 4rem 6rem;
   border: 1px solid papayawhip;
   margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 
