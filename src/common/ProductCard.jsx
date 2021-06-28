@@ -23,6 +23,8 @@ import { UserContext } from '../context/UserContext';
 import { ReactComponent as BuyIconBlue } from '../Images/buy-blue.svg';
 import { ReactComponent as BuyIconWhite } from '../Images/buy-white.svg'
 import CoinIconSVG, { ReactComponent as CoinIcon } from '../Images/coin.svg';
+import Smiling  from '../Images/smiling.png';
+import Confused  from '../Images/confused.png';
 
 //Datos API 
 const API_URI = "https://coding-challenge-api.aerolab.co";
@@ -93,7 +95,7 @@ function ProductCard({ product }) {
 // Cards de los productos
   return (
     <Grid item xs={3} >
-      <StyledPaper onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} style={active ? { transform: "translateY(-10px)" } : { transform: "none" }}>
+      <StyledPaper onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} style={ active ? { transform: "translateY(-10px)" } : { transform: "none" }}>
       {active ?
         <ActivePaper>
           <IconWrapper>
@@ -104,7 +106,7 @@ function ProductCard({ product }) {
             <Typography variant="h5" style={{ color: "#fafafa", fontWeight: "bold" }}>{cost}</Typography>
           </StyledContainer>
           <StyledButton variant="contained" style={{ color: "#dadada", borderRadius: "20.5px" }} onClick={() => handleClick(_id)} >
-            Comprar ahora
+            Comprar
           </StyledButton>
         </ActivePaper>
         : null
@@ -132,12 +134,14 @@ function ProductCard({ product }) {
       >
         <DialogTitle id="alert-dialog-title"> {dialogMessage === "success" ? "¡Genial!" : "¡Error!"}</DialogTitle>
         <DialogContent>
+          {dialogMessage === "success" ? <Avatar src={Smiling} /> : <Avatar src={Confused} />}
           <DialogContentText id="alert-dialog-description">
           {
-            dialogMessage === "success" ?
-            "La compra se realizó con éxito"
+              dialogMessage === "success" ?
+              "La compra se realizó con éxito" 
             :
-            "Hubo un problema con la compra, intentá de nuevo"
+              "Hubo un problema con la compra, intentá de nuevo"
+               
           }
           </DialogContentText>
         </DialogContent>
