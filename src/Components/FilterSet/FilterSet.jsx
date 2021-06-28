@@ -62,8 +62,10 @@ export function FilterSet() {
           try {
             const productsFromAPI = await axios.get(`${API_URI}/products`, { headers });
             const categories = productsFromAPI.data.map(product => product.category).filter((item, index, array) => array.indexOf(item) === index);
+            const categoriesSelected = categories.data.map(product => product.category).filter((item, index, array) => array.indexOf(item) === index);
             setCategoryList(categories);
             setProducts(productsFromAPI.data);
+            setCategorySelected(categoriesSelected);
           } catch (error) {
             console.error(error);
           }

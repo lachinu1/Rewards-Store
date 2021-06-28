@@ -1,5 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom'; 
+import CssBaseline from '@material-ui/core/CssBaseline'
+
 
 //Componentes
 import Navigation from './components/navigation/Navigation';
@@ -17,6 +19,7 @@ function App() {
   return (
     <div>
       <UserProvider>
+        <CssBaseline />
         <Navigation />
           <Switch>
             <Route path = "/rewards-store"  component = {Home} exact />
