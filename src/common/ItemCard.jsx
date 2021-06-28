@@ -61,6 +61,8 @@ const StyledImage = styled.img`
 `
 
 const TypographyContainer = styled(Container)`
+  display: flex;
+  justify-content: flex-end;
   font-size: 2.100rem;
   font-family: 'Source Sans Pro';
   font-weight: 400;

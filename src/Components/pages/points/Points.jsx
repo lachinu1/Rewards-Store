@@ -4,7 +4,7 @@ import axios from 'axios';
 
 //Imagenes
 import CoinIcon from '../../../Images/coin.svg';
-import AddIcon from '../../../Images/add-circle.svg';
+import AddIcon from '../../../Images/add-circle-orange.svg';
 
 //Contexto
 import { UserContext } from '../../../context/UserContext';
@@ -116,17 +116,17 @@ function Points() {
             <div className="container-banner-points">
                 <div className="header-points">
                     <h3>No te quedes sin puntos<img className="coin-points" src={CoinIcon} alt="coin" /></h3>
-                    <h5 className="puntos">Cargá tus puntos siempre que necesites y aprovechá los beneficios!</h5>
+                    <h5 className="puntos">Cargalos siempre que necesites y aprovechá los beneficios!</h5>
                     <button type="submit" className="btn-points" onClick={handleClickCoins}>Cargar Puntos</button>
                     <Dialog
                         open={dialogOpen}
                         onClose={() => handleDialogClose(0)}
                         aria-labelledby="customized-dialog-title"
                         >
-                        <DialogTitle id="alert-dialog-title">{"¡Conseguir más monedas!"}</DialogTitle>
+                        <DialogTitle id="alert-dialog-title">{"¡Conseguir más puntos!"}</DialogTitle>
                             <DialogContent>
                                 <Typography gutterBottom> 
-                                        Podés conseguir más monedas con los siguiente montos
+                                        Podés conseguir más puntos con los siguiente montos
                                 </Typography>
                             </DialogContent>
                         <DialogActions>

@@ -66,7 +66,7 @@ function ProductCard({ product }) {
     }
   }
     
-  //Mensaje en caso de necesitar más monedas
+  //Mensaje en caso de necesitar más puntos
   const handleDialogClose = () => {
     setDialogOpen(false);
     getUserInfo();
@@ -90,10 +90,10 @@ function ProductCard({ product }) {
   }
     
   
-//  Cards de los productos
+// Cards de los productos
   return (
     <Grid item xs={3} >
-        <StyledPaper onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} style={ active ? { transform: "translateY(-10px)" } : { transform: "none" }}>
+      <StyledPaper onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} style={active ? { transform: "translateY(-10px)" } : { transform: "none" }}>
       {active ?
         <ActivePaper>
           <IconWrapper>
@@ -117,8 +117,8 @@ function ProductCard({ product }) {
         <figure>
           <ImgWrapper src={img.url} alt={name} />
           <figcaption>
-            <Typography variant="caption" style={{ color: "gray" }}>{category}</Typography>
-            <Typography variant="subtitle2">{name}</Typography>
+            <TypographyText variant="caption" style={{ color: "gray" }}>{category}</TypographyText>
+            <TypographyText variant="subtitle2">{name}</TypographyText>
           </figcaption>
         </figure>
       </StyledPaper>
@@ -129,8 +129,6 @@ function ProductCard({ product }) {
         onClose={handleDialogClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        display= "flex"
-
       >
         <DialogTitle id="alert-dialog-title"> {dialogMessage === "success" ? "¡Genial!" : "¡Error!"}</DialogTitle>
         <DialogContent>
@@ -209,6 +207,16 @@ const StyledButton = styled(Button)`
   background-color: "#fafafa";
   border-radius: 20px;
   margin-top: 0.5rem;
+`
+
+const TypographyText = styled(Container)`
+display: flex;
+font-size: 18px;
+font-family: 'Source Sans Pro';
+font-weight: 400;
+line-height: 1.235;
+letter-spacing: 0.00735em;
+margin: 0;
 `
 
 export default ProductCard;

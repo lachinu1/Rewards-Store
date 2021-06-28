@@ -134,11 +134,10 @@ export function FilterSet() {
           }
         </div>
           {/* Paginador */}
-            <Controls>
+            <Controls className="MuiContainer-root-2">
                 <ControlsInner>
-                <h6 className="paginas"> Página {activePage} de {pagesTotal}</h6>
+                Página {activePage} de {pagesTotal}
                 <VerticalDivider />
-                <div className="container-filter">
                     <span className="filter-1">
                         <h3 className="text">Ordenar por:</h3>
                     </span>
@@ -148,7 +147,6 @@ export function FilterSet() {
                     <VerticalDivider />
                     <StyledArrow src={ArrowLeft} alt="arrow left" onClick={() => prevPage()} />
                     <StyledArrow src={ArrowRight} alt="arrow rigth" onClick={() => nextPage()} />
-                </div>
                 </ControlsInner>
             </Controls>
             {/* Grilla con los productos */}
@@ -170,8 +168,11 @@ const ControlsInner = styled(Container)`
   flex-wrap: wrap;
   padding: 1rem 0;
   border-bottom: 1px solid lightgray;
-  align-items: baseline;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Source Sans Pro';
+  color: #616161;
+  font-size: 18px;
 `
 
 const VerticalDivider = styled.div`

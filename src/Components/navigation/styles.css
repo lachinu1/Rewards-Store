@@ -15,7 +15,8 @@
     height: 80px;
     left: 0px;
     top: 0px;
-    background: #FFFFFF;
+    background: rgb(249,255,5);
+    background: linear-gradient(151deg, rgba(249,255,5,1) 20%, rgba(255,0,168,1) 100%);
   }
 
   .logo {
@@ -37,8 +38,19 @@
 }
 
 button.btn-nav {
-  background: white;
-  border: 2px solid #ff6a00;
+  background: #f44336;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  width: 130px;
+  height: 30px;
+  margin-top: -40px;
+  cursor: pointer;
+  text-align: right;
+}
+
+button.btn-nav:hover {
+  background: #b63128;
+  border: 2px solid #ffffff;
   border-radius: 50px;
   width: 130px;
   height: 30px;
@@ -69,7 +81,7 @@ a {
   font-size: 16px;
   letter-spacing: -0.15px;
   margin-right: 14px;
-  color: #ff6a00;
+  color: #ffffff;
 }
 
 
@@ -87,7 +99,7 @@ a {
     font-size: 24px;
     line-height: 48px;
     letter-spacing: -0.15px;
-    color: #616161;
+    color: #ffffff;
   }
 
   span.puntos {
@@ -119,13 +131,11 @@ a {
   }
 
   img.coin {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    /* left: 1362px; */
-    right: 11.65%;
-    top: 25%;
-    bottom: 25%;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 120px;
+    top: 14%;
   }
 
 

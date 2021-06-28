@@ -64,8 +64,8 @@ export function History() {
             <h1 className="title">Mi Historial</h1>
             <div className="img-banner"></div>
         </div>
-        <div className="containerHistory">
-        <Controls>
+        <div className="container">
+        <Controls className="MuiContainer-root">
             <ControlsInner>
               Página {activePage} de {pagesTotal}
                 <VerticalDivider />

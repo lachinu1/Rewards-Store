@@ -7,18 +7,6 @@
     box-sizing: border-box;
   }
 
-
-  .container-filter {
-    position: absolute;
-    display: inline-flex;
-    justify-content: center;
-    width: 1110px;
-    height: 74px;
-    left: 235px;
-    /* top: 520px; */
-    top: 140px;
-  }
-
   .line {
     position: absolute;
     left: 16.5%;
@@ -135,6 +123,11 @@ img.icono {
   cursor: pointer;
 }
 
+img.icono:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .btn-category:hover {
   background: #15dbff;
   color: #ffffff;
@@ -150,28 +143,9 @@ button.btn-category:focus {
   color: #ffffff;
 }
 
-h6.paginas {
-  position: absolute;
-  top: 186px;
-  left: 58px;
-}
 
 img.sc-bBjRSN.fplIpe:hover {
   background: #15dbff;
   color: #ffffff;
 }
 
-
-h6.paginas {
-  position: absolute;
-  top: 174px;
-  left: 59px;
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 48px;
-  letter-spacing: -0.15px;
-  color: #616161;
-  
-}

@@ -23,10 +23,10 @@ function ItemGrid({ items }) {
 
 //Estilos
 const GridWrapper = styled.div`
-display: flex;
-padding: 0 6rem 4rem 6rem;
-border: 1px solid papayawhip;
-margin-top: 2rem;
+  display: flex;
+  padding: 0 6rem 4rem 6rem;
+  border: 1px solid papayawhip;
+  margin-top: 2rem;
 `
 
 export default ItemGrid;
