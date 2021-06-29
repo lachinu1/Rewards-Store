@@ -11,6 +11,7 @@
 
 
  nav.container-header {
+ 
     width: 100%;
     height: 80px;
     left: 0px;
@@ -41,36 +42,30 @@ button.btn-nav {
   background: #f44336;
   border: 2px solid #ffffff;
   border-radius: 50px;
-  width: 130px;
+  width: 125px;
   height: 30px;
   margin-top: -40px;
   cursor: pointer;
-  text-align: right;
+  text-align: center;
 }
 
 button.btn-nav:hover {
   background: #b63128;
   border: 2px solid #ffffff;
-  border-radius: 50px;
-  width: 130px;
-  height: 30px;
-  margin-top: -40px;
-  cursor: pointer;
-  text-align: right;
 }
 
 img#icon {
   position: absolute;
   width: 2%;
   left: 763px;
-  top: 28px;
+  top: 29px;
 }
 
 img#icon-2 {
   position: absolute;
   width: 22px;
   left: 901px;
-  top: 29px;
+  top: 31px;
 }
 
 a {
@@ -80,7 +75,7 @@ a {
   font-weight: 600;
   font-size: 16px;
   letter-spacing: -0.15px;
-  margin-right: 14px;
+  margin-right: -20px;
   color: #ffffff;
 }
 

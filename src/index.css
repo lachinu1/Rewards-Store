@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-
-body {
+html, body {
   margin: 0;
+  background: #dddddd;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+div {
+  background: #dddddd;
 }
+
 

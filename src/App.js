@@ -8,6 +8,7 @@ import Navigation from './components/navigation/Navigation';
 import { Home } from './components/pages/home/Home';
 import Points from './components/pages/points/Points';
 import { History } from './components/pages/history/History';
+import Footer from './components/footer/footer.jsx';
 
 //Proveedor
 import { UserProvider } from './context/UserContext';
@@ -24,10 +25,10 @@ function App() {
           <Switch>
             <Route path = "/rewards-store"  component = {Home} exact />
             <Route path="/puntos" component = {Points} exact />
-            <Route path="/mi-historial" component = {History} exact />
-            {/* <Route path = "/notFound" component = {NotFound} exact /> */}
+            <Route path="/historial" component = {History} exact />
           </Switch>
-        </UserProvider>
+      </UserProvider>
+      <Footer />
       </div>
   );
 }

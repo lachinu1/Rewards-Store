@@ -3,7 +3,7 @@ import "./styles.css";
 import axios from 'axios';
 import { usePagination } from '../../hooks';
 import styled from 'styled-components';
-import data from '../../data.json';
+
 
 //Componentes
 import ProductGrid from '../../common/ProductGrid';
@@ -15,12 +15,10 @@ import ArrowRight from '../../Images/arrow-right.svg';
 
 //Material-ui
 import Container from '@material-ui/core/Container';
-// import Typography from '@material-ui/core/Typography';
-// import FormControl from '@material-ui/core/FormControl';
-// import Select from '@material-ui/core/Select';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import InputLabel from '@material-ui/core/InputLabel';
-// import Chip from '@material-ui/core/Chip';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel'
 
 
 //Datos API 
@@ -50,11 +48,7 @@ export function FilterSet() {
     const [category, setCategory] = useState('');
     //Estado de los precios
     const [sortPrice, setSortPrice] = useState(''); // '' \ 'ASC' | 'DESC'
-    //Estado de los filtros por Categoría
-    const [categorySelected, setCategorySelected] = useState('');
-    //Estado del filtro por categoría seleccionado
-    const [selected, setSelected] = useState(true);
-
+   
 
      //GET a la API para traer toda la info de los productos
      useEffect(() => {
@@ -62,10 +56,8 @@ export function FilterSet() {
           try {
             const productsFromAPI = await axios.get(`${API_URI}/products`, { headers });
             const categories = productsFromAPI.data.map(product => product.category).filter((item, index, array) => array.indexOf(item) === index);
-            const categoriesSelected = categories.data.map(product => product.category).filter((item, index, array) => array.indexOf(item) === index);
             setCategoryList(categories);
             setProducts(productsFromAPI.data);
-            setCategorySelected(categoriesSelected);
           } catch (error) {
             console.error(error);
           }
@@ -82,11 +74,6 @@ export function FilterSet() {
       prevPage,
       pagesTotal} = usePagination(products.filter(product => category ? product.category === category : true), 16, sortPrice);
 
-
-    //Función para actualizar el estado de categorySelected
-   function updateCategorySelected (categorySelected) {
-    setCategorySelected(categorySelected)
-    }
 
 
     //Filtro por precio
@@ -108,51 +95,55 @@ export function FilterSet() {
         }
     }
 
-    //Cambia el modo del filtro por categoría
-    const handleChange = () => {
-      setSelected(selected === "btn-category");
-    };
-  
+  //Cambio de Categoría
+  const handleChangeCategory = (e) => {
+    setCategory(e.target.value)
+  }
   
 
     return (
       <React.Fragment>
-        {/* Filtros por categorías */}
-        <div className="container-category">
-          {/* Mapeo de los botones */}
-          {
-            data.categories.map((data, i) => (
-              <div className="container-buttons">
-                <button
-                  key={i}
-                  className={data.value === 1 && selected ? "btn-category active" : "btn-category"}
-                  value={data.value}
-                  onClick={() => { updateCategorySelected(data.category); handleChange(); }}>
-                  <img className="icono" src={data.image_src} alt=""></img>
-                    {data.name}
-                </button>
-              </div>
-            ))
-          }
-        </div>
-          {/* Paginador */}
-            <Controls className="MuiContainer-root-2">
-                <ControlsInner>
-                Página {activePage} de {pagesTotal}
-                <VerticalDivider />
-                    <span className="filter-1">
-                        <h3 className="text">Ordenar por:</h3>
-                    </span>
-                    {/* Filtros por precio */}
-                    <button className="filter" clickable={false} variant={sortPrice === "DESC" ? "default" : "outlined"} onClick={() => handleClickSort('DESC')}>Menor precio</button>
-                    <button className="filter" clickable={false} variant={sortPrice === "ASC" ? "default" : "outlined"} onClick={() => handleClickSort('ASC')}>Mayor precio</button>
-                    <VerticalDivider />
-                    <StyledArrow src={ArrowLeft} alt="arrow left" onClick={() => prevPage()} />
-                    <StyledArrow src={ArrowRight} alt="arrow rigth" onClick={() => nextPage()} />
-                </ControlsInner>
-            </Controls>
-            {/* Grilla con los productos */}
-            <ProductGrid products={getCurrentItems()} categorySelected={categorySelected}/>
+        {/* Paginador */}
+        <Controls className="MuiContainer-root-2">
+          <ControlsInner>
+            Página {activePage} de {pagesTotal}
+            <VerticalDivider />
+              <span className="filter-1">
+                  <h3 className="text">Filtrar por:</h3>
+              </span>
+            <FormControl >
+              <StyledInputLabel id="demo-simple-select-label">Categoría</StyledInputLabel>
+              <StyledSelect
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={category}
+                defaultValue="Todas"
+                onChange={handleChangeCategory}
+              >
+                <MenuItem key="All" value="">Todas</MenuItem>
+                {categoryList.map(cat => <MenuItem key={cat} value={cat}>{cat}</MenuItem>)}
+              </StyledSelect>
+            </FormControl >
+            {/* Filtros por precio */}
+              <button className="filter" clickable={false} variant={sortPrice === "DESC" ? "default" : "outlined"} onClick={() => handleClickSort('DESC')}>Menor precio</button>
+              <button className="filter" clickable={false} variant={sortPrice === "ASC" ? "default" : "outlined"} onClick={() => handleClickSort('ASC')}>Mayor precio</button>
+              <VerticalDivider />
+              <StyledArrow src={ArrowLeft} alt="arrow left" style={{ marginLeft: '-1rem' }} onClick={() => prevPage()} />
+              <StyledArrow src={ArrowRight} alt="arrow rigth" style={{ marginLeft: '1rem' }} onClick={() => nextPage()} />
+          </ControlsInner>
+        </Controls>
+        {/* Grilla con los productos */}
+          <ProductGrid products={getCurrentItems()} />
+        
+        {/* Paginador */}
+        <Controls className="MuiContainer-root-2">
+          <ControlsInner>
+            Página {activePage} de {pagesTotal}
+            <VerticalDivider />
+            <StyledArrow src={ArrowLeft} alt="arrow left" style={{ marginLeft: '44rem' }} onClick={() => prevPage()} />
+            <StyledArrow src={ArrowRight} alt="arrow rigth" style={{ marginLeft: '1rem' }} onClick={() => nextPage()} />
+          </ControlsInner>
+        </Controls>
       </React.Fragment>
     );
 }
@@ -193,4 +184,12 @@ const StyledArrow = styled.img`
   background: #00000047;
   border-radius: 19px;
   border: 1px solid #f3f3f3;
-` 
+`
+
+const StyledInputLabel = styled(InputLabel)`
+  margin-left: 1rem;
+`
+const StyledSelect = styled(Select)`
+  width: 10rem;
+  margin-left: 1rem;
+`

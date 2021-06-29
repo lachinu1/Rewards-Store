@@ -215,7 +215,7 @@ const StyledButton = styled(Button)`
 
 const TypographyText = styled(Container)`
 display: flex;
-font-size: 18px;
+font-size: 16px;
 font-family: 'Source Sans Pro';
 font-weight: 400;
 line-height: 1.235;

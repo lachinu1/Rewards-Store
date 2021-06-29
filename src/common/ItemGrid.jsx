@@ -14,7 +14,7 @@ function ItemGrid({ items }) {
 
   return (
     <GridWrapper>
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         {cards}
       </Grid>
     </GridWrapper>

@@ -28,7 +28,7 @@ function Navigation() {
                       <Link to="/puntos"><img id="icon" src={AddIcon} alt=""></img>Puntos</Link>
                   </button>&nbsp;&nbsp;
                   <button className="btn-nav">
-                      <Link to="/mi-historial"><img id="icon-2" src={HistoryMallIcon} alt=""></img>Mi Historial</Link>
+                      <Link to="/historial"><img id="icon-2" src={HistoryMallIcon} alt=""></img>Historial</Link>
                   </button>
                 </div>
                 <h3  className="user">{name}</h3>

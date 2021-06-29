@@ -61,19 +61,30 @@ export function History() {
     return (
       <HistoryWrapper>
         <div>
-            <h1 className="title">Mi Historial</h1>
+            <h1 className="title">Historial</h1>
             <div className="img-banner"></div>
         </div>
         <div className="container">
-        <Controls className="MuiContainer-root">
+          {/* Paginador */}
+          <Controls className="MuiContainer-root">
             <ControlsInner>
               Página {activePage} de {pagesTotal}
                 <VerticalDivider />
-                <StyledArrow src={ArrowLeft} alt="arrow-left" onClick={() => prevPage()} />
+                <StyledArrow src={ArrowLeft} alt="arrow-left" style={{ marginLeft: '51rem' }} onClick={() => prevPage()} />
                 <StyledArrow src={ArrowRight} alt="arrow-right" onClick={() => nextPage()} />
             </ControlsInner>
-        </Controls>
+          </Controls>
           <ItemGrid items={getCurrentItems()} />
+
+          {/* Paginador */}
+          <Controls className="MuiContainer-root">
+            <ControlsInner>
+              Página {activePage} de {pagesTotal}
+              <VerticalDivider />
+              <StyledArrow src={ArrowLeft} alt="arrow-left" style={{ marginLeft: '51rem' }} onClick={() => prevPage()} />
+              <StyledArrow src={ArrowRight} alt="arrow-right" onClick={() => nextPage()} />
+            </ControlsInner>
+          </Controls>
         </div>
       </HistoryWrapper>
     )
@@ -114,8 +125,8 @@ const VerticalDivider = styled.div`
 `
 
 const StyledArrow = styled.img`
-  height: 32px;
-  width: 32px;
+  height: 35px;
+  width: 35px;
   align-self: center;
   cursor: pointer;
   margin-right: 1rem;
