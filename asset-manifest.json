@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/rewards-store/static/css/main.a68b34c9.chunk.css",
+    "main.js": "/rewards-store/static/js/main.476a2634.chunk.js",
+    "main.js.map": "/rewards-store/static/js/main.476a2634.chunk.js.map",
+    "runtime-main.js": "/rewards-store/static/js/runtime-main.9c1fa359.js",
+    "runtime-main.js.map": "/rewards-store/static/js/runtime-main.9c1fa359.js.map",
+    "static/js/2.eb371bce.chunk.js": "/rewards-store/static/js/2.eb371bce.chunk.js",
+    "static/js/2.eb371bce.chunk.js.map": "/rewards-store/static/js/2.eb371bce.chunk.js.map",
+    "static/js/3.62059af5.chunk.js": "/rewards-store/static/js/3.62059af5.chunk.js",
+    "static/js/3.62059af5.chunk.js.map": "/rewards-store/static/js/3.62059af5.chunk.js.map",
+    "index.html": "/rewards-store/index.html",
+    "static/css/main.a68b34c9.chunk.css.map": "/rewards-store/static/css/main.a68b34c9.chunk.css.map",
+    "static/js/2.eb371bce.chunk.js.LICENSE.txt": "/rewards-store/static/js/2.eb371bce.chunk.js.LICENSE.txt",
+    "static/media/add-circle-orange.4fe4eb40.svg": "/rewards-store/static/media/add-circle-orange.4fe4eb40.svg",
+    "static/media/add-circle.51b2278e.svg": "/rewards-store/static/media/add-circle.51b2278e.svg",
+    "static/media/aerolab-logo.0a8fb170.svg": "/rewards-store/static/media/aerolab-logo.0a8fb170.svg",
+    "static/media/arrow-left.e6eb9be1.svg": "/rewards-store/static/media/arrow-left.e6eb9be1.svg",
+    "static/media/arrow-right.3306c112.svg": "/rewards-store/static/media/arrow-right.3306c112.svg",
+    "static/media/buy-blue.c5c4f01c.svg": "/rewards-store/static/media/buy-blue.c5c4f01c.svg",
+    "static/media/buy-white.9b6e6567.svg": "/rewards-store/static/media/buy-white.9b6e6567.svg",
+    "static/media/coin.b8bc711d.svg": "/rewards-store/static/media/coin.b8bc711d.svg",
+    "static/media/confused.f172eb8b.png": "/rewards-store/static/media/confused.f172eb8b.png",
+    "static/media/styles.css": "/rewards-store/static/media/header-x4.3d3cc82e.png",
+    "static/media/history_mall.ef6a8936.svg": "/rewards-store/static/media/history_mall.ef6a8936.svg",
+    "static/media/smiling.255755f1.png": "/rewards-store/static/media/smiling.255755f1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c1fa359.js",
+    "static/js/2.eb371bce.chunk.js",
+    "static/css/main.a68b34c9.chunk.css",
+    "static/js/main.476a2634.chunk.js"
+  ]
+}
